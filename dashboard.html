@@ -1,4 +1,29 @@
-<section id="book" class="section">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RYS Air - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1>RYS Air</h1>
+        <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#book">Book</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#profile">User Profile</a></li>
+            <li><a href="#logout">Log Out</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="section">
+        <h2>Welcome to RYS Air!</h2>
+        <p>Fly safely and comfortably to your destinations. Book your tickets easily!</p>
+    </section>
+
+    <section id="book" class="section">
     <h2>Book a Flight</h2>
     <form id="bookingForm">
         <label>From:</label>
@@ -52,3 +77,32 @@
         <button id="printItinerary" onclick="printItinerary()">Print Ticket</button>
     </div>
 </section>
+
+
+    <section id="about" class="section">
+        <h2>About RYS Air</h2>
+        <p>Developers: Raymond Chavez, Ryuya Kato, Reesha Sarausad, John Steven Lariego</p>
+        <p>Message us:</p>
+        <ul>
+            <li>Email: info@rysair.com</li>
+            <li>Facebook: RYSAirOfficial</li>
+            <li>Twitter: @RYSAir</li>
+        </ul>
+    </section>
+
+    <section id="profile" class="section">
+        <h2>User Profile</h2>
+        <p id="userInfo">Username: <span id="usernameDisplay"></span></p>
+    </section>
+
+    <section id="logout" class="section">
+        <h2>Log Out</h2>
+        <p>Are you sure you want to log out?</p>
+        <button onclick="logout()">Yes, Log Out</button>
+    </section>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
