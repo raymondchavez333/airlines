@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RYS Air - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1>RYS Air</h1>
+        <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#book">Book</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#profile">User Profile</a></li>
+            <li><a href="#logout">Log Out</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="section">
+        <h2>Welcome to RYS Air!</h2>
+        <p>Fly safely and comfortably to your destinations. Book your tickets easily!</p>
+    </section>
+
+    <section id="book" class="section">
+        <h2>Book a Flight</h2>
+        <form id="bookingForm">
+            <label>From:</label>
+            <select id="from">
+                <option value="Cebu">Cebu</option>
+                <option value="Manila">Manila</option>
+            </select>
+
+            <label>To:</label>
+            <select id="to">
+                <option value="Manila">Manila</option>
+                <option value="Cebu">Cebu</option>
+                <option value="Davao">Davao</option>
+                <option value="Hongkong">Hongkong</option>
+            </select>
+
+            <label>Time:</label>
+            <select id="time">
+                <option>6:00 AM</option>
+                <option>10:00 AM</option>
+                <option>2:00 PM</option>
+                <option>10:00 PM</option>
+                <option>2:00 AM</option>
+            </select>
+
+            <label>Seat Type:</label>
+            <select id="seatType">
+                <option value="Business">Business</option>
+                <option value="Economy">Economy</option>
+            </select>
+
+            <label>Number of Seats:</label>
+            <input type="number" id="seatNumber" min="1" max="20" value="1">
+
+            <label>Discount:</label>
+            <select id="discount">
+                <option value="none">None</option>
+                <option value="student">Student 10%</option>
+                <option value="senior">Senior 10%</option>
+                <option value="pwd">PWD 10%</option>
+                <option value="child">Child below 5 Free</option>
+            </select>
+
+            <button type="submit">Calculate Amount</button>
+        </form>
+
+        <div id="result"></div>
+    </section>
+
+    <section id="about" class="section">
+        <h2>About RYS Air</h2>
+        <p>Developers: Raymond Chavez, Ryuya Kato, Reesha Sarausad, John Steven Lariego</p>
+        <p>Message us:</p>
+        <ul>
+            <li>Email: info@rysair.com</li>
+            <li>Facebook: RYSAirOfficial</li>
+            <li>Twitter: @RYSAir</li>
+        </ul>
+    </section>
+
+    <section id="profile" class="section">
+        <h2>User Profile</h2>
+        <p id="userInfo">Username: <span id="usernameDisplay"></span></p>
+    </section>
+
+    <section id="logout" class="section">
+        <h2>Log Out</h2>
+        <p>Are you sure you want to log out?</p>
+        <button onclick="logout()">Yes, Log Out</button>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
