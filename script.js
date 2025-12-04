@@ -1,3 +1,48 @@
+// Simple Login & Sign Up (localStorage for demo)
+const loginForm = document.getElementById('loginForm');
+const signupForm = document.getElementById('signupForm');
+
+if(loginForm) {
+    loginForm.addEventListener('submit', function(e){
+        e.preventDefault();
+        const username = document.getElementById('loginUsername').value;
+        const password = document.getElementById('loginPassword').value;
+        const storedPassword = localStorage.getItem(username);
+        if(storedPassword && storedPassword === password){
+            localStorage.setItem('loggedInUser', username);
+            window.location.href = 'dashboard.html';
+        } else {
+            alert('Invalid credentials!');
+        }
+    });
+}
+
+if(signupForm) {
+    signupForm.addEventListener('submit', function(e){
+        e.preventDefault();
+        const username = document.getElementById('signupUsername').value;
+        const password = document.getElementById('signupPassword').value;
+        localStorage.setItem(username, password);
+        alert('Sign Up Successful! Please Login.');
+        signupForm.reset();
+    });
+}
+
+// Display username in profile
+const usernameDisplay = document.getElementById('usernameDisplay');
+if(usernameDisplay){
+    const user = localStorage.getItem('loggedInUser');
+    if(user){
+        usernameDisplay.textContent = user;
+    }
+}
+
+// Log out
+function logout(){
+    localStorage.removeItem('loggedInUser');
+    window.location.href = 'index.html';
+}
+
 // Booking System with multiple bookings
 let bookings = [];
 
@@ -77,3 +122,4 @@ function printItinerary(){
     newWin.document.write("<pre>" + printContent + "</pre>");
     newWin.print();
 }
+
